@@ -1,0 +1,289 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Tutor-Request </title> <!-- Department -->
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/quill.snow.css' %}" rel="stylesheet">
+    <link href="{% static 'css/quill.bubble.css' %}" rel="stylesheet">
+    <link href="{% static 'css/remixicon.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style2.css' %}" rel="stylesheet">
+
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+    <header id="header" class="header fixed-top d-flex align-items-center">
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="#" class="logo d-flex align-items-center">
+                <img src="{% static 'images/logo2.jpg' %}" alt="mylogo">
+                <span class="d-none d-lg-block"> NextGenGurus </span>
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+        </div>
+
+        <div class="search-bar">
+            <form class="search-form d-flex align-items-center" method="POST" action="#">
+              <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+              <button type="submit" title="Search" value="Search"><i class="bi bi-search"></i></button>
+            </form>
+        </div>
+
+
+        <nav class="header-nav ms-auto">
+            <ul class="d-flex align-items-center">
+      
+                <li class="nav-item d-block d-lg-none">
+                    <a class="nav-link nav-icon search-bar-toggle " href="#">
+                        <i class="bi bi-search"></i>
+                    </a>
+                </li>
+
+                <li class="nav-item dropdown pe-3">
+      
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                        <img src="download.png" alt="Profile" class="rounded-circle">
+                        <span class="d-none d-md-block dropdown-toggle ps-2">Pastor Oluawo</span>
+                    </a><!-- End Profile Iamge Icon -->
+      
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                        <li class="dropdown-header">
+                            <h6>Atarodo</h6>
+                            <span>Stock Adviser</span>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+      
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                <i class="bi bi-person"></i>
+                                <span>My Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+      
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                <i class="bi bi-gear"></i>
+                                <span>Account Settings</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+      
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                                <i class="bi bi-question-circle"></i>
+                                <span>Need Help?</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                            </li>
+      
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span>Sign Out</span>
+                            </a>
+                        </li>
+      
+                    </ul><!-- End Profile Dropdown Items -->
+                </li><!-- End Profile Nav -->
+      
+            </ul>
+        </nav><!-- End Icons Navigation -->
+        
+    </header>
+    <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav" id="sidebar-nav">
+    
+            <li class="nav-item">
+                <a class="nav-link " href="home.html">
+                    <i class="bi bi-grid"></i>
+                    <span>Dashboard</span>
+                    
+                </a>
+            </li><!-- End Dashboard Nav -->
+    
+            <li class="nav-heading">Pages</li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="individual-study.html">
+                    <i class="bi bi-book"></i>
+                    <span>Individual Study</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="study-group.html">
+                    <i class="bi bi-book"></i>
+                    <span>Study Group</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="leaderboard.html">
+                    <i class="bi bi-people"></i>
+                    <span>Leaderboard</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="">
+                    <i class="bi bi-envelope"></i>
+                    <span>Contact</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="">
+                    <i class="bi bi-question-circle"></i>
+                    <span>FAQ</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="logout.html">
+                    <i class="bi bi-card-list"></i>
+                    <span>Logout</span>
+                </a>
+            </li>
+        </ul>
+    </aside>
+    
+    <main id="main" class="main">
+        <div class="pagetitle">
+            
+            <h1>Tutor-Request</h1>
+            <nav>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+                <li class="breadcrumb-item active">Tutor-Request</li>
+              </ol>
+            </nav>
+        </div>
+        <section class="col-lg-8">
+            <div class="row">
+                
+                <div> <h5 class="card-title"><b>Tutor-Request</b></h5> </div>
+                <div class="col-xxl-12">
+                    <div class="card info-card sales-card"><br>
+                        <div class="card-body">
+                            <img src="download.png" alt="Profile" class="rounded-circle" height="50" width="50"> <br>
+                            <form method="post" action="#">
+                                <b>Name:</b> Bestin Chemistry <br>
+                                <b>About:</b> Best graduating student, chemistry Department, university of Nigeria, 2021.  <br>
+                                <b>Number of Students Enrolled:</b> 22 <br>
+                                <b>Rate:</b> <i class="bi bi-currency-dollar"></i>5 <br>
+                                <b>Rating:</b> <i class="bi bi-star-fill"></i>  <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-half"></i> <hr>
+                            
+                                <button class="btn btn-outline-primary">Choose Bestin</button>
+                            </form>
+                        </div>
+                        
+                        
+                        <!--<div class="card-body">
+                            <img src="download.png" alt="Profile" class="rounded-circle" height="70" width="70" style="justify-content:center;">
+                            <form method="post" action="#">
+                                <b>Name:</b> Bestin Chemistry<br>
+                                <b>About:</b> Best graduating student, chemistry Department, university of Nigeria, 2021. <br>
+                                <b>Number of Students Enrolled:</b> 22<br>
+                                <b>Rate:</b> <i class="bi bi-currency-dollar"></i>5 <br>
+                                <b>Rating:</b> <i class="bi bi-star-fill"></i>  <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-half"></i> <hr>
+                            
+                                <button class="btn btn-outline-primary">Choose Bestin</button>
+                            </form>
+                        </div>-->
+                        
+                    </div>
+                    
+                </div>
+                <div class="col-xxl-12">
+                    <div class="card info-card sales-card"><br>
+                        
+                        <div class="card-body">
+                            <img src="download (1).png" alt="Profile" class="rounded-circle" height="50" width="50"> <br>
+                            <form method="post" action="#">
+                                <b>Name:</b> Bestin Chemistry<br>
+                                <b>About:</b> Best graduating student, chemistry Department, university of Nigeria, 2021. <br>
+                                <b>Number of Students Enrolled:</b> 22<br>
+                                <b>Rate:</b> <i class="bi bi-currency-dollar"></i>5 <br>
+                                <b>Rating:</b> <i class="bi bi-star-fill"></i>  <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-half"></i> <hr>
+                            
+                                <button class="btn btn-outline-primary">Choose Bestin</button>
+                            </form>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col-xxl-12">
+                    <div class="card info-card sales-card"><br>
+                        <div class="card-body">
+                        <img src="profile-img.jpg" alt="Profile" class="rounded-circle" height="50" width="50"> <br>
+                            <form method="post" action="#">
+                                <b>Name:</b> Bestin Chemistry<br>
+                                <b>About:</b> Best graduating student, chemistry Department, university of Nigeria, 2021. <br>
+                                <b>Number of Students Enrolled:</b> 22<br>
+                                <b>Rate:</b> <i class="bi bi-currency-dollar"></i>5 <br>
+                                <b>Rating:</b> <i class="bi bi-star-fill"></i>  <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-half"></i> <hr>
+                            
+                                <button class="btn btn-outline-primary">Choose Bestin</button>
+                            </form>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col-xxl-12">
+                    <div class="card info-card sales-card"><br>
+                        
+                        <div class="card-body">
+                        <img src="news-3.jpg" alt="Profile" class="rounded-circle" height="50" width="50" style="justify-content:center;"> <br>
+                            <form method="post" action="#">
+                                <b>Name:</b> Bestin Chemistry<br>
+                                <b>About:</b> Best graduating student, chemistry Department, university of Nigeria, 2021. <br>
+                                <b>Number of Students Enrolled:</b> 22<br>
+                                <b>Rate:</b> <i class="bi bi-currency-dollar"></i>5 <br>
+                                <b>Rating:</b> <i class="bi bi-star-fill"></i>  <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-half"></i> <hr>
+                            
+                                <button class="btn btn-outline-primary">Choose Bestin</button>
+                            </form>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </div> 
+        </section>
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="copyright">
+          &copy; Copyright <strong><span>NextGenGurus</span></strong>. All Rights Reserved
+        </div>
+      </footer>
+    
+    <script src="{% static 'js/apexcharts.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}" ></script>
+    <script src="{% static 'js/bootstrap.js' %}" ></script>
+    <script src="{% static 'js/chart.umd.js' %}"></script>
+    <script src="{% static 'js/echarts.min.js' %}"></script>
+    <script src="{% static 'js/quill.min.js' %}" ></script>    
+    <script src="{% static 'js/simple-datatables.js' %}" ></script>
+    <script src="{% static 'js/tinymce.min.js' %}" ></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
